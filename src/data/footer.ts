@@ -10,24 +10,23 @@ export const footerDetails: {
     subheading: "Empowering businesses with cutting-edge financial technology solutions.",
     quickLinks: [
         {
-            text: "Features",
+            text: "Funkcionalnosti",
             url: "#features"
         },
         {
-            text: "Pricing",
-            url: "#pricing"
+            text: "Mnenja",
+            url: "#testimonials"
         },
         {
-            text: "Testimonials",
-            url: "#testimonials"
+            text: "Postanite uporabnik",
+            url: "#register"
         }
     ],
-    email: 'address@yoursite.com',
+    email: 'info@2dest.com',
     telephone: '+1 (123) 456-7890',
     socials: {
         // github: 'https://github.com',
-        // x: 'https://twitter.com/x',
-        twitter: 'https://twitter.com/Twitter',
+        x: 'https://twitter.com/x',
         facebook: 'https://facebook.com',
         // youtube: 'https://youtube.com',
         linkedin: 'https://www.linkedin.com',

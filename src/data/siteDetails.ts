@@ -1,12 +1,12 @@
 export const siteDetails = {
-    siteName: 'Finwise',
-    siteUrl: 'https://finwise-omega.vercel.app/',
+    siteName: 'Docilja',
+    siteUrl: 'https://www.docilja.si/',
     metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+        title: 'Docilja - Pametno, varno, preprosto deljenje prevozov',
+        description: 'Docilja omogoča preprosto in varno deljenje prevozov.',
     },
-    language: 'en-us',
-    locale: 'en-US',
+    language: 'sl-si',
+    locale: 'sl-SI',
     siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
     googleAnalyticsId: '', // e.g. G-XXXXXXX,
 }
