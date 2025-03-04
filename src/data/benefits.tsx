@@ -1,72 +1,38 @@
-import { FiBarChart2, FiBriefcase, FiDollarSign, FiLock, FiPieChart, FiShield, FiTarget, FiTrendingUp, FiUser } from "react-icons/fi";
+import { FiUsers, FiDollarSign, FiMapPin, FiLock, FiMessageSquare, FiBell } from "react-icons/fi";
+import { translations } from '@/data/translations';
 
-import { IBenefit } from "@/types"
+const benefitIcons = {
+    section1: [
+        <FiUsers key="users" size={26} />,
+        <FiDollarSign key="dollar" size={26} />,
+        <FiMapPin key="map" size={26} />
+    ],
+    section2: [
+        <FiLock key="lock" size={26} />,
+        <FiMessageSquare key="message" size={26} />,
+        <FiBell key="bell" size={26} />
+    ]
+}
 
-export const benefits: IBenefit[] = [
+type TranslationType = typeof translations.sl;
+
+export const getBenefits = (t: TranslationType) => [
     {
-        title: "Heading 1",
-        description: "Take the guesswork out of managing your money. Our AI-powered budgeting tool adapts to your lifestyle and helps you stay on track.",
-        bullets: [
-            {
-                title: "Intelligent Categorization",
-                description: "Automatically sorts your transactions for crystal-clear insights.",
-                icon: <FiBarChart2 size={26} />
-            },
-            {
-                title: "Customizable Goals",
-                description: "Set and track financial objectives that matter to you.",
-                icon: <FiTarget size={26} />
-            },
-            {
-                title: "Predictive Analysis",
-                description: "Get ahead of your finances with spending forecasts and alerts.",
-                icon: <FiTrendingUp size={26} />
-            }
-        ],
+        title: t.benefits.section1.title,
+        description: t.benefits.section1.description,
+        bullets: t.benefits.section1.bullets.map((bullet, index: number) => ({
+            ...bullet,
+            icon: benefitIcons.section1[index]
+        })),
         imageSrc: "/images/people.png"
     },
     {
-        title: "Heading 2",
-        description: "Start building wealth today, no financial degree required. Finwise makes investing accessible and straightforward.",
-        bullets: [
-            {
-                title: "Micro-Investing",
-                description: "Begin with as little as $1 and watch your money grow.",
-                icon: <FiDollarSign size={26} />
-            },
-            {
-                title: "Expert Portfolios",
-                description: "Choose from investment strategies tailored to your risk tolerance.",
-                icon: <FiBriefcase size={26} />
-            },
-            {
-                title: "Real-Time Performance",
-                description: "Track your investments with easy-to-understand metrics and visuals.",
-                icon: <FiPieChart size={26} />
-            }
-        ],
-        imageSrc: "/images/mockup-2.png"
-    },
-    {
-        title: "Heading 3",
-        description: "Your financial data deserves the best protection. Rest easy knowing Finwise employs cutting-edge security measures.",
-        bullets: [
-            {
-                title: "Military-Grade Encryption",
-                description: "Your information is safeguarded with the highest level of encryption.",
-                icon: <FiLock size={26} />
-            },
-            {
-                title: "Biometric Authentication",
-                description: "Access your account securely with fingerprint or facial recognition.",
-                icon: <FiUser size={26} />
-            },
-            {
-                title: "Real-Time Fraud Detection",
-                description: "Our system constantly monitors for suspicious activity to keep your money safe.",
-                icon: <FiShield size={26} />
-            }
-        ],
+        title: t.benefits.section2.title,
+        description: t.benefits.section2.description,
+        bullets: t.benefits.section2.bullets.map((bullet, index: number) => ({
+            ...bullet,
+            icon: benefitIcons.section2[index]
+        })),
         imageSrc: "/images/mockup-3.png"
     },
 ]

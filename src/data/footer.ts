@@ -1,29 +1,23 @@
-import { IMenuItem, ISocials } from "@/types";
+import { translations } from "@/data/translations";
 
-export const footerDetails: {
-    subheading: string;
-    quickLinks: IMenuItem[];
-    email: string;
-    telephone: string;
-    socials: ISocials;
-} = {
-    subheading: "Empowering businesses with cutting-edge financial technology solutions.",
+export const getFooterDetails = (t: typeof translations.sl) => ({
+    subheading: t.footer.subheading,
     quickLinks: [
         {
-            text: "Funkcionalnosti",
+            text: t.footer.quickLinks.features,
             url: "#features"
         },
         {
-            text: "Mnenja",
+            text: t.footer.quickLinks.testimonials,
             url: "#testimonials"
         },
         {
-            text: "Postanite uporabnik",
+            text: t.footer.quickLinks.register,
             url: "#register"
         }
     ],
-    email: 'info@2dest.com',
-    telephone: '+1 (123) 456-7890',
+    email: t.footer.email,
+    telephone: t.footer.telephone,
     socials: {
         // github: 'https://github.com',
         x: 'https://twitter.com/x',
@@ -33,4 +27,4 @@ export const footerDetails: {
         // threads: 'https://www.threads.net',
         instagram: 'https://www.instagram.com',
     }
-}
+});

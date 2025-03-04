@@ -15,6 +15,7 @@
 
 html {
   @apply scroll-smooth;
+  scrollbar-gutter: stable; 
 }
 
 body {

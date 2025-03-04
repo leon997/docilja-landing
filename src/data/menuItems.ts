@@ -1,16 +1,13 @@
 import { IMenuItem } from "@/types";
+import { translations } from "@/data/translations";
 
-export const menuItems: IMenuItem[] = [
+export const getMenuItems = (t: typeof translations.sl): IMenuItem[] => [
     {
-        text: "Funkcionalnosti",
+        text: t.menu.features,
         url: "#features"
     },
     {
-        text: "Mnenja",
-        url: "#testimonials"
-    },
-    {
-        text: "Postanite uporabnik",
-        url: "#register"
+        text: t.menu.register,
+        url: "https://web.2dest.com/?screen=register"
     }
 ];

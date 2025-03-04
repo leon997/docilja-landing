@@ -1,37 +1,47 @@
+"use client"
+
 import React from 'react'
 import clsx from 'clsx'
-
+import { useLanguage } from '@/contexts/LanguageContext'
+import { translations } from '@/data/translations'
 import { ctaDetails } from '@/data/cta'
 
 const PlayStoreButton = ({ dark }: { dark?: boolean }) => {
+    const { currentLanguage } = useLanguage()
+    const t = translations[currentLanguage]
+
     return (
-        <a href={ctaDetails.googlePlayUrl}>
-            <button
-                type="button"
-                className={clsx("flex items-center justify-center min-w-[205px] mt-3 px-6 h-14 rounded-full w-full sm:w-fit", { "text-white bg-foreground": dark, "text-foreground bg-white": !dark })}
+        <div className="flex items-center gap-2">
+            <a href={ctaDetails.googlePlayUrl}>
+                <button
+                    type="button"
+                    className={clsx("flex items-center justify-center min-w-[150px] mt-3 px-6 h-12 rounded-full w-full sm:w-fit", { "text-white bg-foreground": dark, "text-foreground bg-white": !dark })}
+                >
+                    <div className="mr-3">
+                        <svg viewBox="0 0 512 512" width="20" className="sm:w-[30px]">
+                            <path fill="currentColor" d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div className="text-xs">
+                            {t.cta.getVia}
+                        </div>
+                        <div className="-mt-1 font-sans text-lg sm:text-xl font-semibold">
+                            Google Play
+                        </div>
+                    </div>
+                </button>
+            </a>
+{/*             <a 
+                href="/files/docilja.apk" 
+                download="docilja.apk"
+                className={clsx("cursor-pointer hover:opacity-80 transition-opacity", { "text-primary": dark, "text-foreground": !dark })}
+                title="Download APK"
             >
-                <div className="mr-3">
-                    <svg viewBox="30 336.7 120.9 129.2" width="30">
-                        <path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z">
-                        </path>
-                        <path fill="#FF3333" d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z">
-                        </path>
-                        <path fill="#48FF48" d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z">
-                        </path>
-                        <path fill="#3BCCFF" d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z">
-                        </path>
-                    </svg>
-                </div>
-                <div>
-                    <div className="text-xs">
-                        Naloži preko
-                    </div>
-                    <div className="-mt-1 font-sans text-xl font-semibold">
-                        Google Play
-                    </div>
-                </div>
-            </button>
-        </a>
+                <HiDownload className="h-6 w-6 mt-3" />
+            </a> */}
+        </div>
     )
 }
 

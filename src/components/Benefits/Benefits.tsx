@@ -1,8 +1,15 @@
-import BenefitSection from "./BenefitSection"
+"use client"
 
-import { benefits } from "@/data/benefits"
+import BenefitSection from "./BenefitSection"
+import { useLanguage } from '@/contexts/LanguageContext'
+import { translations } from '@/data/translations'
+import { getBenefits } from "@/data/benefits"
 
 const Benefits: React.FC = () => {
+    const { currentLanguage } = useLanguage()
+    const t = translations[currentLanguage]
+    const benefits = getBenefits(t)
+
     return (
         <div id="features">
             <h2 className="sr-only">Features</h2>

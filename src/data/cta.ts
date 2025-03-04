@@ -1,6 +1,6 @@
 export const ctaDetails = {
-    heading: 'Join Over 1 Million Users To Transform Your Finances',
-    subheading: 'Your journey to financial freedom starts here. Download Finwise today and take the first step towards a brighter financial future!',
+    heading: 'Pridruži se hitro rastoči skupnosti voznikov in potnikov',
+    subheading: 'Tvoj prevoz je le en klik stran! Prenesi aplikacijo Docija in uživaj v hitri, varni in ugodni souporabi prevozov!',
     appStoreUrl: '#',
     googlePlayUrl: '#'
 }

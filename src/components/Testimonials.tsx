@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { testimonials } from '@/data/testimonials';
 
 const Testimonials: React.FC = () => {
@@ -11,7 +10,7 @@ const Testimonials: React.FC = () => {
                     className=""
                 >
                     <div className="flex items-center mb-4 w-full justify-center lg:justify-start">
-                        <Image
+                        <img
                             src={testimonial.avatar}
                             alt={`${testimonial.name} avatar`}
                             width={50}

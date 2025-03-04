@@ -3,21 +3,26 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react
 import { BiMinus, BiPlus } from "react-icons/bi";
 
 import SectionTitle from "./SectionTitle";
-import { faqs } from "@/data/faq";
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/data/translations';
+import { getFaqs } from "@/data/faq";
 
 const FAQ: React.FC = () => {
+    const { currentLanguage } = useLanguage();
+    const t = translations[currentLanguage];
+    const faqs = getFaqs(t);
+
     return (
         <section id="faq" className="py-10 lg:py-20">
             <div className="flex flex-col lg:flex-row gap-10">
                 <div className="">
-                    <p className="hidden lg:block text-foreground-accent">FAQ&apos;S</p>
                     <SectionTitle>
-                        <h2 className="my-3 !leading-snug lg:max-w-sm text-center lg:text-left">Pogosta vprašanja</h2>
+                        <h2 className="my-3 !leading-snug lg:max-w-sm text-center lg:text-left">{t.faq.heading}</h2>
                     </SectionTitle>
                     <p className="lg:mt-10 text-foreground-accent text-center lg:text-left">
-                        Naše ekipa je na voljo za vsa dodatna vprašanja.
+                        {t.faq.support}
                     </p>
-                    <a href="mailto:" className="mt-3 block text-xl lg:text-4xl text-secondary font-semibold hover:underline text-center lg:text-left">info@2dest.com</a>
+                    <a href={`mailto:${t.faq.email}`} className="mt-3 block text-xl lg:text-4xl text-secondary font-semibold hover:underline text-center lg:text-left">{t.faq.email}</a>
                 </div>
 
                 <div className="w-full lg:max-w-2xl mx-auto border-b">
