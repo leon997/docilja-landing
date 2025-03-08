@@ -12,7 +12,7 @@ interface LoginModalProps {
 export default function LoginModal({ isOpen, onClose, rideId }: LoginModalProps) {
   const { currentLanguage } = useLanguage()
   const t = translations[currentLanguage]
-  const loginUrl = `${getLoginUrl()}?screen=ride-details&ride_id=${rideId}`
+  const loginUrl = `${getLoginUrl()}/ride/${rideId}`
   if (!isOpen) return null
 
   return (
