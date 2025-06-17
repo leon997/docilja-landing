@@ -9,7 +9,9 @@ const HomePage: React.FC = () => {
   return (
     <>
       {/* 🟦 Glavna sekcija Hero */}
-      <Hero />   
+      <Hero />
+
+      
 
       {/* 🟩 Ostala vsebina */}
       <Container className="mt-10">
@@ -18,10 +20,11 @@ const HomePage: React.FC = () => {
         <FAQ />
       </Container>
 
-       {/* 🟧 CTA (tu se že nahaja TravelSearch – tega pusti pri miru!) */}
+      {/* 🟧 CTA (tu se že nahaja TravelSearch – tega pusti pri miru!) */}
       <CTA />
     </>
   );
 };
 
 export default HomePage;
+
