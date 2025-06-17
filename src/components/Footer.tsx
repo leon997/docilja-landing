@@ -1,18 +1,29 @@
 "use client"
 
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { siteDetails } from '@/data/siteDetails';
 import { getFooterDetails } from '@/data/footer';
 import { getPlatformIconByName } from '@/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/data/translations';
+import { TermsModal } from './TermsModal';
+import { IMenuItem } from "@/types";
 
 const Footer: React.FC = () => {
     const { currentLanguage } = useLanguage();
     const t = translations[currentLanguage];
     const footerDetails = getFooterDetails(t);
+    const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+
+    const handleLinkClick = (link: IMenuItem, e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (link.modal) {
+            e.preventDefault();
+            setIsTermsModalOpen(true);
+            return;
+        }
+    };
 
     return (
         <footer className="bg-hero-background text-foreground py-10">
@@ -33,7 +44,15 @@ const Footer: React.FC = () => {
                     <ul className="text-foreground-accent">
                         {footerDetails.quickLinks.map(link => (
                             <li key={link.text} className="mb-2">
-                                <Link href={link.url} className="hover:text-foreground">{link.text}</Link>
+                                <Link
+                                    href={link.url}
+                                    onClick={(e) => {
+                                        handleLinkClick(link, e);
+                                    }}
+                                    className="hover:text-foreground"
+                                >
+                                    {link.text}
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -50,14 +69,14 @@ const Footer: React.FC = () => {
                         </a>
                     )}
 
-                    {footerDetails.telephone && (
+{/*                     {footerDetails.telephone && (
                         <a 
                             href={`tel:${footerDetails.telephone}`} 
                             className="block text-foreground-accent hover:text-foreground"
                         >
                             {t.footer.phoneLabel}: {footerDetails.telephone}
                         </a>
-                    )}
+                    )} */}
 
                     {footerDetails.socials && (
                         <div className="mt-5 flex items-center gap-5 flex-wrap">
@@ -81,6 +100,10 @@ const Footer: React.FC = () => {
             <div className="mt-8 md:text-center text-foreground-accent px-6">
                 <p>{t.footer.copyright} &copy; {new Date().getFullYear()} {siteDetails.siteName[currentLanguage]}. {t.footer.rightsReserved}</p>
             </div>
+            <TermsModal 
+                isOpen={isTermsModalOpen} 
+                onClose={() => setIsTermsModalOpen(false)} 
+            />
         </footer>
     );
 };

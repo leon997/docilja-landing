@@ -16,6 +16,10 @@ const benefitIcons = {
 
 type TranslationType = typeof translations.sl;
 
+// Determine language from build-time environment variable for image path
+const targetLangEnvBenefits = process.env.APP_TARGET_LANG?.toLowerCase();
+const mockupImageSrc = targetLangEnvBenefits === 'en' ? "/images/mockup-3-en.png" : "/images/mockup-3.png";
+
 export const getBenefits = (t: TranslationType) => [
     {
         title: t.benefits.section1.title,
@@ -33,6 +37,6 @@ export const getBenefits = (t: TranslationType) => [
             ...bullet,
             icon: benefitIcons.section2[index]
         })),
-        imageSrc: "/images/mockup-3.png"
+        imageSrc: mockupImageSrc // Updated to use the conditional image path
     },
 ]

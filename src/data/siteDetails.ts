@@ -10,8 +10,8 @@ export const siteDetails = {
             description: 'DoCilja omogoča preprosto in varno deljenje prevozov.',
         },
         en: {
-            title: 'DoCilja - Smart, safe, simple ride sharing',
-            description: 'DoCilja enables simple and safe ride sharing.',
+            title: '2Dest - Smart, safe, simple ride sharing',
+            description: '2Dest enables simple and safe ride sharing.',
         }
     },
     language: {

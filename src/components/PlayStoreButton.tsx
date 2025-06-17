@@ -24,11 +24,11 @@ const PlayStoreButton = ({ dark }: { dark?: boolean }) => {
                         </svg>
                     </div>
                     <div>
-                        <div className="text-xs">
+{/*                         <div className="text-xs">
                             {t.cta.getVia}
-                        </div>
-                        <div className="-mt-1 font-sans text-lg sm:text-xl font-semibold">
-                            Google Play
+                        </div> */}
+                        <div className="-mt-1 font-sans text-md sm:text-md font-semibold">
+                            {t.cta.downloadOnGoogle}
                         </div>
                     </div>
                 </button>

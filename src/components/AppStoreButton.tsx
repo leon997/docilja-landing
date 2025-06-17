@@ -23,11 +23,11 @@ const AppStoreButton = ({ dark }: { dark?: boolean }) => {
                     </svg>
                 </div>
                 <div>
-                    <div className="text-xs">
+{/*                     <div className="text-xs">
                         {t.cta.downloadOn}
-                    </div>
-                    <div className="-mt-1 font-sans text-lg sm:text-xl font-semibold">
-                        App Store
+                    </div> */}
+                    <div className="-mt-1 font-sans text-md sm:text-md font-semibold">
+                        {t.cta.downloadOnApple}
                     </div>
                 </div>
             </button>

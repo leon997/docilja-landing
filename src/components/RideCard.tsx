@@ -1,6 +1,8 @@
 import { useState } from "react"
 import LoginModal from "./LoginModal"
 import { useLanguage } from '@/contexts/LanguageContext'
+import { getLoginUrl } from "@/data/siteDetails"
+
 
 interface RideCardProps {
   id: number
@@ -14,6 +16,8 @@ interface RideCardProps {
 export default function RideCard({ id, start_city_name, end_city_name, start_time, free_seats, price }: RideCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const { currentLanguage } = useLanguage();
+  const loginUrl = `${getLoginUrl()}/ride/${id}`
+
 
   return (
     <>
@@ -57,12 +61,12 @@ export default function RideCard({ id, start_city_name, end_city_name, start_tim
                 <p className="text-2xl font-bold">{price} €</p>
                 <p className="text-sm text-gray-500">{currentLanguage === "sl" ? "Cena" : "Price"}</p>
               </div>
-              <button 
+              <a 
                 className="px-4 py-2 bg-primary hover:bg-primary-accent text-white rounded-md transition-colors"
-                onClick={() => setIsModalOpen(true)}
+                href={loginUrl}
               >
-                {currentLanguage === "sl" ? "Odpri" : "Open"}
-              </button>
+                {currentLanguage === "sl" ? "Odpri v aplikaciji" : "Open in app"}
+              </a>
             </div>
           </div>
         </div>

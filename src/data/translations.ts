@@ -2,20 +2,22 @@ export const translations = {
   sl: {
     // Hero
     hero: {
-      heading: 'Platforma za skupne prevoze, dostavo paketov in prevoz koles.',
-      subheading: 'Deli/najdi prevoze, pošiljaj pakete, prevažaj kolesa – vse na enem mestu!'
+      heading: 'Platforma za skupne prevoze, dostavo paketov in transport koles.',
+      subheading: 'Deli in najdi prevoze, pošiljaj pakete, prevažaj kolesa – vse na enem mestu!'
     },
     // Menu items
     menu: {
-      features: 'Funkcionalnosti',
+      features: "Funkcije",
       testimonials: 'Mnenja',
-      register: 'Postanite uporabnik'
+      register: "Registracija",
+      terms: "Pogoji uporabe"
     },
     // CTA
     cta: {
       heading: 'Pridruži se hitro rastoči skupnosti voznikov in potnikov',
       subheading: 'Tvoj prevoz je le en klik stran! Prenesi aplikacijo Docija in uživaj v hitri, varni in ugodni souporabi prevozov!',
-      downloadOn: 'Prenesi na',
+      downloadOnApple: 'Prihaja kmalu!',
+      downloadOnGoogle: 'Google Play',
       getVia: 'Naloži preko'
     },
     benefits: {
@@ -24,12 +26,12 @@ export const translations = {
         description: "Docija ti pomaga najti najboljši prevoz hitro in varno.",
         bullets: [
           {
-            title: "Skupnost voznikov in sopotnikov",
-            description: "Postanite del mreže ljudi, ki si pomagajo pri prevozih in skupaj izboljšujejo način potovanja"
+            title: "Skupnost voznikov/dostavljalcev in sopotnikov/pošiljateljev",
+            description: "Postanite del mreže ljudi, ki si pomagajo pri prevozih/dostavah in skupaj izboljšujejo naš planet"
           },
           {
             title: "Ekonomično in okolju prijazno",
-            description: "Delite prevoze in zmanjšajte stroške goriva ter svoj ogljični odtis"
+            description: "Delite prevoze/dostave in zmanjšajte stroške goriva/pošiljanja"
           },
           {
             title: "Poveži se s sopotniki v bližini",
@@ -39,11 +41,11 @@ export const translations = {
       },
       section2: {
         title: "O Aplikaciji",
-        description: "Z Docijo lahko hitro in preprosto poiščete ali ponudite prevoz. Naša platforma omogoča enostavno povezovanje sopotnikov in voznikov ter zagotavlja varno in udobno izkušnjo.",
+        description: "Z Docijo lahko hitro in preprosto poiščete ali ponudite prevoz. Naša platforma omogoča enostavno povezovanje sopotnikov/pošiljateljev in voznikov/dostavljalcev ter zagotavlja varno in udobno izkušnjo.",
         bullets: [
           {
-            title: "Hitro iskanje prevozov",
-            description: "Poiščite razpoložljive prevoze v realnem času in si zagotovite svoje mesto"
+            title: "Hitro iskanje prevozov/dostav",
+            description: "Poiščite razpoložljive prevoze/dostave v realnem času in si zagotovite mesto/dostavo"
           },
           {
             title: "Hitro in enostavno dogovarjanje",
@@ -96,7 +98,8 @@ export const translations = {
       quickLinks: {
         features: "Funkcionalnosti",
         testimonials: "Mnenja",
-        register: "Postanite uporabnik"
+        register: "Postanite uporabnik",
+        terms: "Pogoji uporabe"
       },
       email: "info@2dest.com",
       telephone: "+386 40 123 456"
@@ -122,6 +125,45 @@ export const translations = {
       passengers: "Potniki",
       searching: "Iskanje...",
       search: "Išči"
+    },
+    // Cookie consent banner
+    cookieConsent: {
+      message: "Ta spletna stran uporablja piškotke za izboljšanje vaše izkušnje. Z nadaljnjo uporabo strani se strinjate z našo uporabo piškotkov.",
+      accept: "Se strinjam",
+      decline: "Zavrni",
+      policy: "Politika piškotkov",
+      learnMore: "Več informacij"
+    },
+    // Cookie policy page
+    cookiePolicy: {
+      title: "Politika piškotkov",
+      intro: "Piškotki so majhne besedilne datoteke, ki se naložijo na vaš računalnik ali mobilno napravo ob obisku spletne strani.",
+      whatAre: {
+        title: "Kaj so piškotki?",
+        description: "Piškotki nam pomagajo, da vam omogočimo boljšo uporabniško izkušnjo. Omogočajo nam, da si zapomnimo vaše preference in izbire, analiziramo promet na strani ter izboljšamo delovanje naše spletne strani."
+      },
+      whatWeUse: {
+        title: "Kateri piškotki se uporabljajo?",
+        description: "Na naši strani uporabljamo naslednje vrste piškotkov:",
+        types: [
+          {
+            name: "Nujno potrebni piškotki",
+            description: "Ti piškotki so potrebni za delovanje spletne strani in jih ni mogoče izklopiti."
+          },
+          {
+            name: "Analitični piškotki",
+            description: "Pomagajo nam razumeti, kako obiskovalci uporabljajo našo spletno stran."
+          },
+          {
+            name: "Funkcionalni piškotki",
+            description: "Ti piškotki omogočajo boljšo funkcionalnost in prilagajanje."
+          }
+        ]
+      },
+      control: {
+        title: "Kako nadzorujete piškotke?",
+        description: "Večino brskalnikov lahko nastavite tako, da blokirajo ali vas obvestijo o piškotkih. Za več informacij obiščite nastavitve svojega brskalnika."
+      }
     }
   },
   en: {
@@ -132,15 +174,17 @@ export const translations = {
     },
     // Menu items
     menu: {
-      features: 'Features',
+      features: "Features",
       testimonials: 'Testimonials',
-      register: 'Become a user'
+      register: "Register",
+      terms: "Terms of Use"
     },
     // CTA
     cta: {
       heading: 'Join the fast-growing community of drivers and passengers',
       subheading: 'Your ride is just one click away! Download the Docilja app and enjoy fast, safe and affordable ride sharing!',
-      downloadOn: 'Download on',
+      downloadOnApple: 'Coming soon',
+      downloadOnGoogle: 'Google Play',
       getVia: 'Get it on'
     },
     benefits: {
@@ -149,12 +193,12 @@ export const translations = {
         description: "Docilja helps you find the best ride quickly and safely.",
         bullets: [
           {
-            title: "Community of Drivers and Passengers",
-            description: "Become part of a network of people who help each other with rides and improve the way of traveling together"
+            title: "Community of Drivers/carriers and Passengers/senders",
+            description: "Become part of a network of people who help each other with rides/deliveries"
           },
           {
             title: "Economical and Eco-friendly",
-            description: "Share rides to reduce fuel costs and your carbon footprint"
+            description: "Share rides/deliveries and reduce fuel/sending costs"
           },
           {
             title: "Connect with Nearby Travelers",
@@ -164,15 +208,15 @@ export const translations = {
       },
       section2: {
         title: "About the App",
-        description: "With Docilja, you can quickly and easily find or offer a ride. Our platform enables simple connection between passengers and drivers while ensuring a safe and comfortable experience.",
+        description: "With 2Dest, you can quickly and easily find or offer a ride. Our platform enables simple connection between passengers/senders and drivers/deliverers while ensuring a safe and comfortable experience.",
         bullets: [
           {
-            title: "Quick Ride Search",
-            description: "Find available rides in real-time and secure your spot"
+            title: "Quick Ride/Delivery Search",
+            description: "Find available rides/deliveries in real-time and secure your spot/delivery"
           },
           {
             title: "Fast and Easy Communication",
-            description: "Contact drivers or passengers directly in the app and arrange everything in seconds."
+            description: "Contact drivers/carriers or passengers/senders directly in the app and arrange everything in seconds."
           },
           {
             title: "Real-time Notifications",
@@ -221,7 +265,8 @@ export const translations = {
       quickLinks: {
         features: "Features",
         testimonials: "Testimonials",
-        register: "Get Started"
+        register: "Get Started",
+        terms: "Terms of Use"
       },
       email: "info@2dest.com",
       telephone: "+386 40 123 456"
@@ -229,7 +274,7 @@ export const translations = {
     features: {
       carpool: {
         title: "Carpool with others",
-        description: "Post your ride and share travel costs with members of our community."
+        description: "Post your ride/delivery and share the cost with members of our community."
       },
       package: {
         title: "Package transport",
@@ -247,6 +292,45 @@ export const translations = {
       passengers: "passengers",
       searching: "Searching...",
       search: "Search"
+    },
+    // Cookie consent banner
+    cookieConsent: {
+      message: "This website uses cookies to enhance your experience. By continuing to use this site, you agree to our use of cookies.",
+      accept: "Accept",
+      decline: "Decline",
+      policy: "Cookie Policy",
+      learnMore: "Learn More"
+    },
+    // Cookie policy page
+    cookiePolicy: {
+      title: "Cookie Policy",
+      intro: "Cookies are small text files that are placed on your computer or mobile device when you visit a website.",
+      whatAre: {
+        title: "What are cookies?",
+        description: "Cookies help us provide you with a better user experience. They allow us to remember your preferences and choices, analyze site traffic, and improve the operation of our website."
+      },
+      whatWeUse: {
+        title: "What cookies do we use?",
+        description: "On our site, we use the following types of cookies:",
+        types: [
+          {
+            name: "Essential cookies",
+            description: "These cookies are necessary for the website to function and cannot be switched off."
+          },
+          {
+            name: "Analytics cookies",
+            description: "These help us understand how visitors use our website."
+          },
+          {
+            name: "Functional cookies",
+            description: "These cookies enable enhanced functionality and personalization."
+          }
+        ]
+      },
+      control: {
+        title: "How do you control cookies?",
+        description: "Most browsers can be set to block or alert you about cookies. Visit your browser settings for more information."
+      }
     }
   }
 } 

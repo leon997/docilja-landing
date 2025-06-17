@@ -12,9 +12,12 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/data/translations';
 import { getMenuItems } from '@/data/menuItems';
 import { getLoginUrl } from '@/data/siteDetails';
+import { TermsModal } from './TermsModal';
+import { IMenuItem } from "@/types";
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
     const { currentLanguage } = useLanguage();
     const t = translations[currentLanguage];
     const menuItems = getMenuItems(t);
@@ -22,6 +25,15 @@ const Header: React.FC = () => {
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+    };
+
+    const handleMenuClick = (item: IMenuItem, e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (item.modal) {
+            e.preventDefault();
+            setIsTermsModalOpen(true);
+            setIsOpen(false);
+            return;
+        }
     };
 
     return (
@@ -46,7 +58,11 @@ const Header: React.FC = () => {
                     <ul className="hidden md:flex items-center space-x-6">
                         {menuItems.map(item => (
                             <li key={item.text} className="flex items-center">
-                                <Link href={item.url} className="text-foreground hover:text-foreground-accent transition-colors">
+                                <Link 
+                                    href={item.url} 
+                                    className="text-foreground hover:text-foreground-accent transition-colors"
+                                    onClick={(e) => handleMenuClick(item, e)}
+                                >
                                     {item.text}
                                 </Link>
                             </li>
@@ -95,7 +111,14 @@ const Header: React.FC = () => {
                     <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
                         {menuItems.map(item => (
                             <li key={item.text}>
-                                <Link href={item.url} className="text-foreground hover:text-primary block" onClick={toggleMenu}>
+                                <Link 
+                                    href={item.url} 
+                                    className="text-foreground hover:text-primary block" 
+                                    onClick={(e) => {
+                                        handleMenuClick(item, e);
+                                        if (!item.modal) toggleMenu();
+                                    }}
+                                >
                                     {item.text}
                                 </Link>
                             </li>
@@ -108,6 +131,11 @@ const Header: React.FC = () => {
                     </ul>
                 </div>
             </Transition>
+
+            <TermsModal 
+                isOpen={isTermsModalOpen} 
+                onClose={() => setIsTermsModalOpen(false)} 
+            />
         </header>
     );
 };

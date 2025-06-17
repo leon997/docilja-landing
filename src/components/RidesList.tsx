@@ -11,13 +11,14 @@ export interface Ride {
   start_time: string
   free_seats: number
   price: number
+  rideId: number
 }
 
 interface RidesListProps {
   rides: Ride[]
 }
 
-export default function RidesList({ rides }: RidesListProps) {
+export default function RidesList({ rides }: RidesListProps ){
   const { currentLanguage } = useLanguage();
 
   if (!rides.length) {

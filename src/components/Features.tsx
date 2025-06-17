@@ -79,7 +79,7 @@ export default function FeatureSection() {
             >
               <Card>
                 <CardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-teal-50 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-lg bg-white-50 flex items-center justify-center mb-4 border border-gray-200">
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-primary">{feature.title}</h3>
