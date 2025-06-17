@@ -70,7 +70,7 @@ export const translations = {
     faq: {
       title: "FAQ",
       heading: "Pogosta vprašanja",
-      support: "Naše ekipa je na voljo za vsa dodatna vprašanja.",
+      support: "Naša ekipa je na voljo za vsa dodatna vprašanja.",
       email: "info@2dest.com",
       questions: {
         q1: {

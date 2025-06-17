@@ -10,10 +10,6 @@ const HomePage: React.FC = () => {
     <>
       {/* 🟦 Glavna sekcija Hero */}
       <Hero />   
-      
-
-      {/* 🟧 CTA (tu se že nahaja TravelSearch – tega pusti pri miru!) */}
-      <CTA />
 
       {/* 🟩 Ostala vsebina */}
       <Container className="mt-10">
@@ -21,6 +17,9 @@ const HomePage: React.FC = () => {
         <Benefits />
         <FAQ />
       </Container>
+
+       {/* 🟧 CTA (tu se že nahaja TravelSearch – tega pusti pri miru!) */}
+      <CTA />
     </>
   );
 };

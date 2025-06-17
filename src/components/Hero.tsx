@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
                     <AppStoreButton dark />
                     <PlayStoreButton dark />
                 </div>
-                <div className="mt-8 sticky top-[80px] z-40 bg-white shadow-md">
+                <div className="mt-8">
                     <TravelSearch />
                 </div>
             </div>
