@@ -14,5 +14,11 @@ export const getMenuItems = (t: typeof translations.sl): IMenuItem[] => [
         text: t.menu.terms,
         url: "#terms",
         modal: true
+    }, 
+    {
+        text: t.menu.contact || 'Kontakt',
+        url: '/kontakt',
+        
     }
+ 
 ];

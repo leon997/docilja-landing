@@ -1,3 +1,5 @@
+import { Contact } from "lucide-react";
+
 export const translations = {
   sl: {
     // Hero
@@ -10,7 +12,8 @@ export const translations = {
       features: "Funkcije",
       testimonials: 'Mnenja',
       register: "Registracija",
-      terms: "Pogoji uporabe"
+      terms: "Pogoji uporabe",
+      contact: "Kontakt"
     },
     // CTA
     cta: {
