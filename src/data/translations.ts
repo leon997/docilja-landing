@@ -180,7 +180,8 @@ export const translations = {
       features: "Features",
       testimonials: 'Testimonials',
       register: "Register",
-      terms: "Terms of Use"
+      terms: "Terms of Use",
+      contact: "Contact"
     },
     // CTA
     cta: {

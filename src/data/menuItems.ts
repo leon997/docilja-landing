@@ -1,7 +1,7 @@
 import { IMenuItem } from "@/types";
 import { translations } from "@/data/translations";
 
-export const getMenuItems = (t: typeof translations.sl): IMenuItem[] => [
+export const getMenuItems = (t: typeof translations.sl | typeof translations.en): IMenuItem[] => [
     {
         text: t.menu.features,
         url: "#features"

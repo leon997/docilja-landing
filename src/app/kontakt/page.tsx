@@ -1,6 +1,20 @@
+"use client";
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function KontaktPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Popravi zgodovino brskalnika
+    if (window.history.state && window.history.state.idx === 0) {
+      router.replace('/');
+    }
+  }, []);
+
   return (
-    <main className="max-w-xl mx-auto p-6 mt-10">
+    <main className="max-w-xl mx-auto p-6 mt-32">
       <h1 className="text-2xl font-bold mb-4">Kontaktirajte nas</h1>
       <form
         action="mailto:info@2dest.com"
@@ -8,6 +22,7 @@ export default function KontaktPage() {
         encType="text/plain"
         className="flex flex-col gap-4"
       >
+        {/* Ostali form elementi ostanejo enaki */}
         <input
           type="text"
           name="ime"
