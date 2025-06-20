@@ -17,6 +17,7 @@ export default function KontaktPage() {
     <main className="max-w-xl mx-auto p-6 mt-32">
       <h1 className="text-2xl font-bold mb-4">Kontaktirajte nas</h1>
       <form
+      
         action="mailto:info@2dest.com"
         method="POST"
         encType="text/plain"
@@ -25,18 +26,11 @@ export default function KontaktPage() {
         {/* Ostali form elementi ostanejo enaki */}
         <input
           type="text"
-          name="ime"
-          placeholder="Ime"
+          name="ime in priimek"
+          placeholder="Ime in Priimek"
           required
           className="border p-2 rounded"
-        />
-        <input
-          type="text"
-          name="priimek"
-          placeholder="Priimek"
-          required
-          className="border p-2 rounded"
-        />
+        />       
         <input
           type="email"
           name="email"
