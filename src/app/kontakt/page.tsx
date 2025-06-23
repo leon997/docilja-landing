@@ -1,36 +1,46 @@
-"use client";
+'use client';
 
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function KontaktPage() {
+  const [status, setStatus] = useState('idle');
   const router = useRouter();
 
-  useEffect(() => {
-    // Popravi zgodovino brskalnika
-    if (window.history.state && window.history.state.idx === 0) {
-      router.replace('/');
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const response = await fetch('https://formspree.io/f/xvgrwaby', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      setStatus('success');
+      router.push('/'); // ali katera koli druga stran (npr. /hvala)
+    } else {
+      setStatus('error');
     }
-  }, []);
+  };
 
   return (
     <main className="max-w-xl mx-auto p-6 mt-32">
       <h1 className="text-2xl font-bold mb-4">Kontaktirajte nas</h1>
-      <form
-      
-        action="mailto:info@2dest.com"
-        method="POST"
-        encType="text/plain"
-        className="flex flex-col gap-4"
-      >
-        {/* Ostali form elementi ostanejo enaki */}
+
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="text"
           name="ime in priimek"
           placeholder="Ime in Priimek"
           required
           className="border p-2 rounded"
-        />       
+        />
         <input
           type="email"
           name="email"
@@ -51,6 +61,13 @@ export default function KontaktPage() {
         >
           Pošlji
         </button>
+
+        {status === 'success' && (
+          <p className="text-green-600">Sporočilo uspešno poslano. Preusmerjam...</p>
+        )}
+        {status === 'error' && (
+          <p className="text-red-600">Prišlo je do napake. Poskusite znova.</p>
+        )}
       </form>
     </main>
   );
